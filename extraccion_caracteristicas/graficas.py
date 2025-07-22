@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Cargar dataset
-df = pd.read_csv("./dataset_caracteristicas_limpio.csv")
+df = pd.read_csv("extraccion_caracteristicas/resultados/dataset_caracteristicas_limpio.csv")
 X = df.drop(columns=["archivo", "etiqueta"])
 y = LabelEncoder().fit_transform(df["etiqueta"])
 

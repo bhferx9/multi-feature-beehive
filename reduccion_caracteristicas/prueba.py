@@ -1,4 +1,3 @@
-# --- IMPORTACIONES ---
 import pandas as pd
 import numpy as np
 import random
@@ -11,7 +10,7 @@ import os
 
 # --- CARGAR DATOS ---
 print("📥 Cargando archivo: audio_segmentado500m_normalizado.csv")
-df = pd.read_csv('./extraccion_caracteristicas/resultados/audio_segmentado500m_normalizado.csv')
+df = pd.read_csv('./extraccion_caracteristicas/resultados/Pruebas/audio_segmentado500m_normalizado.csv')
 X = df.drop(columns=['Segmento'])
 y = np.random.randint(0, 2, size=X.shape[0])  # Etiquetas simuladas
 
@@ -105,10 +104,10 @@ print(f"⏱ Tiempo de cómputo CCO: {end_cco - start_cco:.2f} segundos")
 # --- GUARDAR RESULTADOS ---
 os.makedirs("resultados", exist_ok=True)
 
-X.iloc[:, pso_selected].to_csv("./reduccion_caracteristicas/resultados/500m/X_pso_reducido_500m.csv", index=False)
-X.iloc[:, cco_selected].to_csv("./reduccion_caracteristicas/resultados/500m/X_cco_reducido_500m.csv", index=False)
-pd.Series(pso_selected).to_csv("./reduccion_caracteristicas/resultados/500m/indices_pso_500m.csv", index=False, header=['columna'])
-pd.Series(cco_selected).to_csv("./reduccion_caracteristicas/resultados/500m/indices_cco_500m.csv", index=False, header=['columna'])
+X.iloc[:, pso_selected].to_csv("./reduccion_caracteristicas/resultados/Pruebas/500/X_pso_reducido_500m.csv", index=False)
+X.iloc[:, cco_selected].to_csv("./reduccion_caracteristicas/resultados/Pruebas/500/X_cco_reducido_500m.csv", index=False)
+pd.Series(pso_selected).to_csv("./reduccion_caracteristicas/resultados/Pruebas/500/indices_pso_500m.csv", index=False, header=['columna'])
+pd.Series(cco_selected).to_csv("./reduccion_caracteristicas/resultados/Pruebas/500/indices_cco_500m.csv", index=False, header=['columna'])
 
 print("\n📁 Reducción de características guardada en la carpeta 'resultados/'")
 
@@ -121,4 +120,3 @@ plt.ylim(0, 1)
 plt.grid(axis='y', linestyle='--', alpha=0.6)
 plt.tight_layout()
 plt.show()
-

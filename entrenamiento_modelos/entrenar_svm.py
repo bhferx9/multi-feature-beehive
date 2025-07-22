@@ -23,9 +23,9 @@ def entrenar_y_mostrar_resultados(X, y, nombre_dataset):
     print(classification_report(y_test, y_pred))
 
 # Entrenamientos
-X_ori, y_ori = cargar_datos("./dataset_caracteristicas_limpio.csv")
-X_pso, y_pso = cargar_datos("./dataset_pso_reducido.csv")
-X_cco, y_cco = cargar_datos("./dataset_cco_reducido.csv")
+X_ori, y_ori = cargar_datos("./extraccion_caracteristicas/resultados/dataset_caracteristicas_limpio.csv")
+X_pso, y_pso = cargar_datos("./reduccion_caracteristicas/resultados/dataset_pso_reducido.csv")
+X_cco, y_cco = cargar_datos("./reduccion_caracteristicas/resultados/new_dataset_cco_reducido.csv")
 
 entrenar_y_mostrar_resultados(X_ori, y_ori, "Todas las características")
 entrenar_y_mostrar_resultados(X_pso, y_pso, "PSO")
